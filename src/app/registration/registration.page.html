@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <form [formGroup]="registerForm" (ngSubmit)="registeredUser()" novalidate>
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+          <div text-center style="margin-top: 100px;">
+            <ion-img src="assets/logo.png" class="img"></ion-img>
+            <h3 style="text-align: center;">Create your account!</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input formControlName="name" type="text" required
+                [class.invalid]="!registerForm.controls.name.valid && registerForm.controls.name.dirty"></ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <div *ngIf="!registerForm.controls.name.valid  && registerForm.controls.name.dirty">
+              <p class="error ion-padding" [hidden]="!registerForm.controls.name.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please enter name.</p>
+            </div>
+
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email" type="text" required
+                [class.invalid]="!registerForm.controls.email.valid && registerForm.controls.email.dirty"></ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <div *ngIf="!registerForm.controls.email.valid  && registerForm.controls.email.dirty">
+              <p class="error ion-padding" [hidden]="!registerForm.controls.email.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please enter a valid email.</p>
+            </div>
+            <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+              Please enter a valid email.
+            </span> -->
+
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input formControlName="password" type="text" required>
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+              Password is required.
+            </span>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+              Password should be min 5 chars long.
+            </span>
+
+            <ion-item>
+              <ion-label position="floating">Confirm Password</ion-label>
+              <ion-input formControlName="confirmpassword" type="text" required>
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.confirmpassword.errors?.required">
+                Confirm Password is required.
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.confirmpassword.errors?.minlength">
+                Confirm Password should be min 5 chars long.
+              </span> -->
+            <p class="error-message"
+              *ngIf="!registerForm.controls.confirmpassword.hasError('required') && !registerForm.controls.password.valid  && !registerForm.controls.password.dirty">
+              required.</p>
+            <p class="error-message"
+              *ngIf="!registerForm.controls.confirmpassword.valid  && registerForm.controls.confirmpassword.dirty">
+              Password not matched.</p>
+
+            <ion-item>
+              <ion-label>Birthday</ion-label>
+              <ion-datetime displayFormat="MM DD YY" placeholder="Select Date" formControlName="birthday" type="date" required
+              [class.invalid]="!registerForm.controls.birthday.valid && registerForm.controls.birthday.dirty"></ion-datetime>
+            </ion-item>
+            <div *ngIf="!registerForm.controls.birthday.valid  && registerForm.controls.birthday.dirty">
+              <p class="error ion-padding" [hidden]="!registerForm.controls.birthday.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please select birthday.</p>
+            </div>
+
+            <ion-list style="background-color: #ddf3f5 !important;">
+              <ion-radio-group formControlName="gender" required
+                [class.invalid]="!registerForm.controls.gender.valid && registerForm.controls.gender.dirty">
+                <ion-list-header>
+                  <ion-label>Name</ion-label>
+                </ion-list-header>
+
+                <ion-item>
+                  <ion-label>Male</ion-label>
+                  <ion-radio slot="start" value="male" checked></ion-radio>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label>Female</ion-label>
+                  <ion-radio slot="start" value="female"></ion-radio>
+                </ion-item>
+
+              </ion-radio-group>
+              <!-- Error messages -->
+              <div *ngIf="!registerForm.controls.gender.valid  && registerForm.controls.gender.dirty">
+                <p class="error ion-padding" [hidden]="!registerForm.controls.gender.hasError('required')">
+                  required.</p>
+                <p class="error ion-padding">Please select gender</p>
+              </div>
+            </ion-list>
+
+            <ion-item>
+              <ion-label position="floating">Profile Link</ion-label>
+              <ion-input formControlName="profilelink" type="text" required
+                [class.invalid]="!registerForm.controls.profilelink.valid && registerForm.controls.profilelink.dirty">
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <div *ngIf="!registerForm.controls.profilelink.valid  && registerForm.controls.profilelink.dirty">
+              <p class="error ion-padding" [hidden]="!registerForm.controls.profilelink.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please enter profile link.</p>
+            </div>
+
+            <ion-row style="margin-top: 20px;">
+              <ion-col>
+                <ion-button type="submit" class="buttonsingup" shape="full" expand="block">
+                  Sign up
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact Details</ion-title>
+    <!-- <ion-button slot="end" (click)="EditContact()">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-button> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="height: 500px;">
+    <ion-avatar *ngIf="data.u_img" class="avatars" style="width: fit-content; margin: 15px 0px 0px 15px;">
+      <img src="{{data.u_img}}" style="height: 100px; width: 100px;">
+    </ion-avatar>
+
+    <ion-label class="lbltitle">{{data.u_name}}</ion-label>
+
+    <ion-card-content style="margin-top: 50px;">
+
+
+      <h5 style="margin: 10px; color: #383a3e; font-size: 14px;">
+        <p style="color: #24d6ea;">Email Id </p>{{data.u_email}}
+      </h5>
+
+      <h6 style="margin: 10px; color: #383a3e; font-size: 14px;">
+        <p style="color: #24d6ea;">Phone number </p>{{data.u_phonenumber}}
+      </h6>
+
+      <ion-button expand="block" class="buttonsingup" fill="clear" (click)="deleteContact()" style="margin-top: 20px;">
+        Delete Contact
+      </ion-button>
+      <ion-button expand="block" class="buttonsingup" fill="clear" (click)="EditContact()" style="margin-top: 10px;">
+        Edit Contact
+      </ion-button>
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ionic 4 SQLite CRUD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <form [formGroup]="addContactForm" (ngSubmit)="addContact()" novalidate>
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3 style="text-align: center;">Add Contact</h3>
+
+            <!-- <ion-avatar (click)="selectImage()" *ngIf="!targetImage2" class="avtimgselect">
+              <ion-icon slot="icon-only" name="people"></ion-icon>
+            </ion-avatar> -->
+
+            <!-- <ion-button fill="clear" (click)="selectImage()" *ngIf="!targetImage2" class="avtimgselect">
+              <ion-icon slot="icon-only" name="people"></ion-icon>
+            </ion-button>
+             -->
+            <div class="vertical-center">
+              <div class="center">
+                <ion-avatar (click)="selectImage()" *ngIf="!targetImage2" class="avtimgselect">
+                  <img src="assets/icon/profile.png" />
+                </ion-avatar>
+              </div>
+            </div>
+            <div class="vertical-center">
+              <div class="center">
+                <ion-avatar *ngIf="targetImage2" class="avtimgselect" >
+                  <img src="{{targetImage2}}">
+                </ion-avatar>
+              </div>
+            </div>
+            <!-- <div *ngIf="!addContactForm.controls.image.valid  && addContactForm.controls.image.dirty">
+              <p class="error ion-padding" [hidden]="!addContactForm.controls.image.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please select user image</p>
+            </div> -->
+
+          </div>
+          <div padding>
+
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input formControlName="name" type="text" required
+                [class.invalid]="!addContactForm.controls.name.valid && addContactForm.controls.name.dirty">
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <div *ngIf="!addContactForm.controls.name.valid  && addContactForm.controls.name.dirty">
+              <p class="error ion-padding" [hidden]="!addContactForm.controls.name.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please enter name.</p>
+            </div>
+
+
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email" type="text" required
+                [class.invalid]="!addContactForm.controls.email.valid && addContactForm.controls.email.dirty">
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <div *ngIf="!addContactForm.controls.email.valid  && addContactForm.controls.email.dirty">
+              <p class="error ion-padding" [hidden]="!addContactForm.controls.email.hasError('required')">
+                required.</p>
+              <p class="error ion-padding">Please enter a valid email.</p>
+            </div>
+
+
+            <ion-item>
+              <ion-label position="floating">Mobile Number</ion-label>
+              <ion-input formControlName="number" type="text" required>
+              </ion-input>
+            </ion-item>
+            <!-- Error messages -->
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.number.errors?.required">
+              Mobile number is required.
+            </span>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.number.errors?.minlength">
+              Mobile number should be min 10 numbers long.
+            </span>
+
+
+            <ion-row style="margin-top: 20px;">
+              <ion-col>
+                <ion-button type="submit" class="buttonsingup" shape="full" expand="block">
+                  Add Contact
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar *ngIf="data.u_img" class="avatars" style="width: fit-content; margin: 15px 0px 0px 15px;">
+    <img src="{{data.u_img}}" style="height: 100px; width: 100px;">
+  </ion-avatar>
+  <ion-item style="margin-top: 100px;">
+    <ion-label position="stacked">Name</ion-label>
+    <ion-input type="text" [(ngModel)]="cdata.name" name="subject"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input type="email" [ngModel]="cdata.email" name="message"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Number</ion-label>
+    <ion-input type="number" [(ngModel)]="cdata.number" name="subject"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row style="margin-top: 20px;">
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block" (click)="updateContact()">
+          Edit Contact
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

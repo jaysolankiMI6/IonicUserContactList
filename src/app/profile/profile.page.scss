@@ -1,0 +1,17 @@
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.avtimgselect {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: right !important;
+    height: 100px;
+    width: 100px;
+}
+.lbltitle{
+    margin: 15px 0px 10px 10px;
+    font-size: 24px;
+}

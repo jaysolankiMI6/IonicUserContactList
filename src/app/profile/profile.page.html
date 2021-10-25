@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="height: 550px;">
+
+    <ion-card-content style="margin-top: 50px;">
+      <div class="vertical-center">
+        <div class="center">
+          <ion-avatar class="avtimgselect">
+            <img src="assets/icon/profile.png" style="height: 100px; width: 100px;" />
+          </ion-avatar>
+        </div>
+      </div>
+      <ion-label class="lbltitle">{{data.userdata.u_name}}</ion-label>
+
+      <h5 style="margin: 10px; color: #383a3e; font-size: 20px;">
+        <p style="color: #24d6ea; font-size: 16px;">Email Id </p>{{data.userdata.u_email}}
+      </h5>
+
+      <h6 style="margin: 10px; color: #383a3e; font-size: 20px;">
+        <p style="color: #24d6ea; font-size: 16px;">Birth Day </p>{{bday}}
+      </h6>
+
+      <h5 style="margin: 10px; color: #383a3e; font-size: 20px;">
+        <p style="color: #24d6ea; font-size: 16px;">Gender </p>{{data.userdata.u_gender}}
+      </h5>
+
+      <h6 style="margin: 10px; color: #383a3e; font-size: 20px;">
+        <p style="color: #24d6ea; font-size: 16px;" (click)="openlink(data.userdata.u_profilelink)">Profile link </p>
+        {{data.userdata.u_profilelink}}
+      </h6>
+
+    </ion-card-content>
+  </ion-card>

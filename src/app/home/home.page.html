@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Ionic 4 SQLite CRUD</ion-title>
+    <ion-button slot="end" fill="clear" (click)="openProfile()">
+      <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+  <!-- <ion-grid>
+    <ion-row color="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+          <h5>Please add image into Gallary from top right corner Mr./ Ms. {{username}}</h5>
+        </div>
+        <div text-center>
+          <h5 style="text-align: center;">Gallary</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list lines="full" *ngIf="targetImage2" style="padding: 10px;">
+    <form [formGroup]="mainForm" (ngSubmit)="storeData()">
+      <ion-item>
+        <ion-label position="floating">Image Discription</ion-label>
+        <ion-input formControlName="desc" placeholder="write something" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Add Image
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list> -->
+
+
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let data of Data">
+        <div class="img-wrapper">
+          <img src="{{data.song_name}}" (click)="deleteSong(data.id)">
+          <p>{{data.artist_name}}</p>
+        </div>
+      </ion-col>
+    </ion-row> -->
+    <ion-list style="background-color: #ddf3f5 !important;">
+      <ion-item *ngFor="let data of Data">
+        <div (click)="gotoContact(data)" style="width: 100%;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="3">
+                <!-- <ion-avatar slot="start"> -->
+                  <img src="{{data.u_img}}" style="border-radius: 50% !important; height: 70px; width: 70px;">
+                <!-- </ion-avatar> -->
+              </ion-col>
+              <ion-col size="9">
+                <ion-label>{{data.u_name}}</ion-label>
+                <h5>{{data.u_email}}</h5>
+                <h6>{{data.u_phonenumber}}</h6>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+
+
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addContact()">
+    <ion-fab-button style="color: f2aaaa;">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

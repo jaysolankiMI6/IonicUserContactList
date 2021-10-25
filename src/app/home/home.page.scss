@@ -1,0 +1,47 @@
+.image-container {
+    min-height: 200px;
+    background-size: cover;
+}
+
+@media (min-width: 0px) {
+    .images {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 420px) {
+    .images {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 720px) {
+    .images {
+        column-count: 4;
+    }
+}
+
+.img-wrapper {
+    min-height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.one-image {
+    margin: 2px;
+}
+img {
+    border-radius: 10px !important;
+}
+ion-item {
+    --background: #ddf3f5;
+    --color: #436f8a;
+}
+ion-button {
+    --background: #a6dcef;
+    --color: #436f8a;
+}
+.fabbuttonaddcontact {
+    color: #f2aaaa;
+}

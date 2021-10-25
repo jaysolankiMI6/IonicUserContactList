@@ -1,0 +1,31 @@
+.small-text {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+ion-item{
+    --background: #ddf3f5;
+    --color: #436f8a;
+}
+
+ion-button{
+    --background: #a6dcef;
+    --color: #436f8a;
+}
+
+.error{
+    --color: #e36387;
+}
+
+.buttonsingup{
+    --background: #24d6ea;
+    --color: #383a3e;
+}
+.img {
+    height: 20vh;
+    width: 20%;
+    margin: auto;
+    display: block;
+}
